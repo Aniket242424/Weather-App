@@ -1,59 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>about</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <meta name="description" content="Learn about Weather App Pro - A modern, feature-rich weather application built with cutting-edge technologies">
     <link rel="icon" href="/images/w2.png">
     <link rel="stylesheet" href="./css/styles.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    {{>header}}
+    
     <div class="main-content">
-        {{>header}}
-        <img class="portrait" src="./images/123.png">
+        <div class="about-content">
+            <!-- Profile Section -->
+            <div class="about-profile ghibli-style">
+                <div class="profile-image-container">
+                    <img class="portrait ghibli-portrait" src="/images/123.png.png" alt="Aniket Mahangade - Ghibli Style">
+                    <div class="ghibli-decoration">
+                        <div class="floating-leaf leaf-1">🍃</div>
+                        <div class="floating-leaf leaf-2">🍂</div>
+                        <div class="floating-leaf leaf-3">🌸</div>
+                        <div class="floating-leaf leaf-4">🍃</div>
+                    </div>
+                </div>
+                <div class="profile-content">
+                    <h2 class="ghibli-title">{{name}}</h2>
+                    <p class="ghibli-subtitle">Full Stack Software Developer</p>
+                    <p class="ghibli-description">
+                        Passionate about creating innovative web applications with modern technologies.
+                        Specializing in full-stack development with expertise in Node.js, React, and cloud technologies.
+                        Committed to delivering high-quality, scalable solutions that drive business growth.
+                    </p>
+                        <div class="ghibli-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">💻</span>
+                                <span class="stat-text">Full Stack Developer</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">🚀</span>
+                                <span class="stat-text">Agile Development</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">⚡</span>
+                                <span class="stat-text">Performance Optimization</span>
+                            </div>
+                        </div>
+                </div>
+            </div>
 
+            <!-- Project Information -->
+            <div class="about-table">
+                <table>
+                    <tr>
+                        <th>Project Name</th>
+                        <td>Weather App Pro v{{version}}</td>
+                    </tr>
+                    <tr>
+                        <th>Developer</th>
+                        <td>{{name}}</td>
+                    </tr>
+                    <tr>
+                        <th>Profession</th>
+                        <td>Full Stack Software Developer</td>
+                    </tr>
+                    <tr>
+                        <th>Technologies Used</th>
+                        <td>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                <span style="background: #68d391; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">Node.js</span>
+                                <span style="background: #4299e1; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">Express.js</span>
+                                <span style="background: #ed8936; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">Handlebars</span>
+                                <span style="background: #9f7aea; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">JavaScript</span>
+                                <span style="background: #38b2ac; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">CSS3</span>
+                                <span style="background: #e53e3e; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">HTML5</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>API Services</th>
+                        <td>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                <span style="background: #2d3748; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">OpenWeatherMap API</span>
+                                <span style="background: #2b6cb0; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">MapBox API</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Features</th>
+                        <td>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                <span style="background: #805ad5; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">Real-time Weather</span>
+                                <span style="background: #d69e2e; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">7-Day Forecast</span>
+                                <span style="background: #319795; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">Responsive Design</span>
+                                <span style="background: #e53e3e; color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.875rem;">Global Coverage</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Version</th>
+                        <td>{{version}} - Complete Redesign</td>
+                    </tr>
+                    <tr>
+                        <th>Last Updated</th>
+                        <td>{{currentDate}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Features Section -->
+            <div style="grid-column: 1 / -1;">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: var(--text-primary);">Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h4>Real-time weather data</h4>
+                        <p>Get instant weather updates with current conditions, temperature, humidity, and more.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>7-day detailed forecast</h4>
+                        <p>Plan ahead with comprehensive 7-day weather forecasts including hourly predictions.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Interactive weather maps</h4>
+                        <p>Visualize weather patterns with interactive maps and detailed location data.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Location-based services</h4>
+                        <p>Advanced geocoding technology supports worldwide location searches.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Responsive design</h4>
+                        <p>Optimized for all devices with modern, mobile-first responsive design.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>Multiple weather providers</h4>
+                        <p>Reliable weather data from multiple trusted API providers for accuracy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Details -->
+            <div style="grid-column: 1 / -1; background: var(--bg-card); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-md);">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">Technical Architecture</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Backend</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✅ Express.js REST API</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Modern ES6+ JavaScript</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Axios for HTTP requests</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Security middleware (Helmet, CORS)</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Response compression</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Error handling & logging</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Frontend</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✅ Modern CSS with CSS Grid & Flexbox</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Responsive design patterns</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Progressive Web App features</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Accessibility compliance</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Dark mode support</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Performance optimizations</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">APIs & Services</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✅ OpenWeatherMap API</li>
+                            <li style="margin-bottom: 0.5rem;">✅ MapBox Geocoding API</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Data caching & optimization</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Fallback error handling</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Rate limiting protection</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Environment configuration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="aboutTable">
-        <table class="table">
-            <tr>
-                <th>
-                    Name
-                </th>
-                <td>
-                    Aniket Mahangade
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Profession
-                </th>
-                <td>
-                    Full Stack Software developer
-                </td>
-            </tr>
-
-            <tr>
-                <th>
-                    Technology Used
-                </th>
-                <td>
-                    NodeJs,Express and Handlebars
-                </td>
-            </tr>
-
-            <tr>
-                <th>
-                    API Service Provider
-                </th>
-                <td>
-                    Darksky API
-                </td>
-            </tr>
-
-        </table>
-    </div>
+    
     {{>footer}}
 </body>
 

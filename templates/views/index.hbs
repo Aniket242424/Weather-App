@@ -1,32 +1,115 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>weather</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Accurate Weather Forecasts</title>
+    <meta name="description" content="{{description}}">
     <link rel="icon" href="/images/w2.png">
     <link rel="stylesheet" href="./css/styles.css">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
-<body >
-    {{!-- Render Partial --}}
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="nav-brand">🌤️ Weather App Pro</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Weather</a></li>
+                <li><a href="/about" class="nav-link">About</a></li>
+                <li><a href="/help" class="nav-link">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <div class="main-content">
-        {{>header}}
-        <h3 style="color:#E99157;">Use this site to get weather information in your area</h3>
-    <form>
-        <div class="input-group">
-        <input placeholder="Enter Location"   id="inputGroup-sizing-default" class="form-control">
-        <button class="btn btn-default btn-primary">Search</button>
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>{{title}}</h1>
+            <p>{{description}}</p>
         </div>
-    </form>
 
-    <p class="h6 text-info"   id="message-1"></p>
-    <p class="h6" id="message-2"></p>
+        <!-- Search Form -->
+        <div class="search-container">
+            <form class="search-form" id="weatherForm">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="locationInput"
+                    placeholder="Enter city name, postal code, or address..."
+                    required
+                    autocomplete="off"
+                >
+                <button type="submit" class="search-btn" id="searchBtn">
+                    <span class="btn-text">Get Weather</span>
+                    <span class="loading-spinner" style="display: none;"></span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Messages -->
+        <div id="message-1" class="message" style="display: none;"></div>
+        <div id="message-2" class="message" style="display: none;"></div>
+
+        <!-- Weather Display -->
+        <div id="weatherDisplay" class="weather-container" style="display: none;">
+            <!-- Current Weather Card -->
+            <div class="weather-card current-weather" id="currentWeather">
+                <div class="location" id="weatherLocation"></div>
+                <div class="temperature" id="weatherTemp"></div>
+                <div class="description" id="weatherDesc"></div>
+                
+                <div class="weather-details" id="weatherDetails">
+                    <!-- Weather details will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- 7-Day Forecast -->
+            <div class="weather-card">
+                <h2>7-Day Forecast</h2>
+                <div class="forecast-grid" id="forecastGrid">
+                    <!-- Forecast will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section" style="margin-top: 4rem;">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--text-primary);">Why Choose Weather App Pro?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>🌍 Global Coverage</h4>
+                    <p>Get accurate weather data for any location worldwide with our advanced geocoding technology.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📊 Detailed Forecasts</h4>
+                    <p>Access comprehensive weather information including 7-day forecasts and hourly predictions.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>📱 Responsive Design</h4>
+                    <p>Optimized for all devices with a beautiful, modern interface that works everywhere.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>⚡ Real-time Data</h4>
+                    <p>Get the most up-to-date weather information with real-time updates and caching.</p>
+                </div>
+            </div>
+        </div>
     </div>
     
-    {{>footer}}
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Weather App Pro. Created with ❤️ by {{name}}</p>
+            <div class="footer-links">
+                <a href="/about">About</a>
+                <a href="/help">Help</a>
+                <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    
     <script src="./js/app.js"></script>
 </body>
-
 </html>

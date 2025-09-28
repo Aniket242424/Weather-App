@@ -1,17 +1,29 @@
 {
-  "name": "web-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "weather-app-pro",
+  "version": "2.0.0",
+  "description": "A modern, feature-rich weather application with real-time forecasts, interactive maps, and responsive design",
+  "main": "src/app.js",
   "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["weather", "forecast", "nodejs", "express", "api", "responsive"],
+  "author": "Aniket Mahangade",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
-    "hbs": "^4.1.1",
-    "request": "^2.88.2"
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "helmet": "^7.1.0",
+    "cors": "^2.8.5",
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

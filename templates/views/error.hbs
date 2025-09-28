@@ -1,16 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - Weather App Pro</title>
+    <link rel="icon" href="/images/w2.png">
     <link rel="stylesheet" href="./css/styles.css">
-    <script src="./js/app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    {{!-- Render Partial --}}
+    {{>header}}
+    
     <div class="main-content">
-        {{>header}}
-        <p>{{errorMessage}}</p>
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <div class="error-message">{{errorMessage}}</div>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                The page you're looking for doesn't exist or has been moved.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="/" style="color: white; text-decoration: none; padding: 1rem 2rem; background: var(--gradient-primary); border-radius: 8px; font-weight: 600; transition: var(--transition);">
+                    🏠 Go Home
+                </a>
+                <a href="/help" style="color: var(--primary-color); text-decoration: none; padding: 1rem 2rem; background: var(--bg-card); border: 2px solid var(--primary-color); border-radius: 8px; font-weight: 600; transition: var(--transition);">
+                    ❓ Get Help
+                </a>
+            </div>
+        </div>
     </div>
 
     {{>footer}}

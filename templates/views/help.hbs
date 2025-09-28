@@ -1,32 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>help</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <meta name="description" content="Get help and support for Weather App Pro - Find answers to common questions and learn how to use all features">
     <link rel="icon" href="/images/w2.png">
     <link rel="stylesheet" href="./css/styles.css">
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    {{>header}}
+    
     <div class="main-content">
-        {{>header}}
-        {{helpText}}
-        <h2>What can we help you with?</h2>
-        <div class="links">
+        <div class="help-content">
+            <h1 style="text-align: center; margin-bottom: 2rem; color: var(--text-primary);">{{title}}</h1>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 1.125rem;">{{helpText}}</p>
 
-<a href="#help-account">I need weather API support</a>
-<a href="#help-report">I can't find temperature in my Area</a>
-<a href="#help-bug">I want to report a bug</a>
-<a href="#help-collab">Collaboration, legal, commercial</a>
-</div>
+            <!-- FAQ Section -->
+            <h2 style="color: var(--text-primary); margin-bottom: 2rem;">Frequently Asked Questions</h2>
+            
+            {{#each faqs}}
+            <div class="faq-item">
+                <div class="faq-question">{{question}}</div>
+                <div class="faq-answer">{{answer}}</div>
+            </div>
+            {{/each}}
+
+            <!-- Additional Help Topics -->
+            <h2 style="color: var(--text-primary); margin-bottom: 2rem; margin-top: 3rem;">Additional Help Topics</h2>
+            <div class="help-links">
+                <a href="#help-api" class="help-link">
+                    <div>
+                        <h4>API & Technical Support</h4>
+                        <p>Get help with weather API integration, technical issues, and developer resources.</p>
+                    </div>
+                </a>
+                
+                <a href="#help-location" class="help-link">
+                    <div>
+                        <h4>Location & Search Issues</h4>
+                        <p>Having trouble finding weather for your area? Learn how to search effectively.</p>
+                    </div>
+                </a>
+                
+                <a href="#help-bug" class="help-link">
+                    <div>
+                        <h4>Report a Bug</h4>
+                        <p>Found an issue? Help us improve by reporting bugs and providing feedback.</p>
+                    </div>
+                </a>
+                
+                <a href="#help-collab" class="help-link">
+                    <div>
+                        <h4>Collaboration & Contact</h4>
+                        <p>Interested in collaboration, licensing, or commercial use? Get in touch with us.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Usage Tips -->
+            <div style="background: var(--bg-card); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow-md); margin-top: 3rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;">💡 Pro Tips for Better Experience</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">🔍 Search Tips</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✅ Use city names (e.g., "London")</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Include country for accuracy</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Try postal codes</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Use landmarks or addresses</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">📱 Mobile Usage</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✅ Enable location services</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Use voice search</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Bookmark your location</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Check offline mode</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--text-primary); margin-bottom: 1rem;">⚡ Performance</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">✅ Data is cached for 5 minutes</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Refresh for latest updates</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Check your internet connection</li>
+                            <li style="margin-bottom: 0.5rem;">✅ Clear browser cache if needed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div style="background: var(--gradient-primary); color: white; padding: 2rem; border-radius: var(--border-radius); margin-top: 2rem; text-align: center;">
+                <h3 style="margin-bottom: 1rem;">Still Need Help?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.9;">Can't find what you're looking for? We're here to help!</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                    <a href="mailto:support@weatherapp.com" style="color: white; text-decoration: none; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.2); border-radius: 8px; transition: var(--transition);">
+                        📧 Email Support
+                    </a>
+                    <a href="https://github.com" target="_blank" style="color: white; text-decoration: none; padding: 0.75rem 1.5rem; background: rgba(255,255,255,0.2); border-radius: 8px; transition: var(--transition);">
+                        💻 GitHub Issues
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-
+    
     {{>footer}}
 </body>
 
